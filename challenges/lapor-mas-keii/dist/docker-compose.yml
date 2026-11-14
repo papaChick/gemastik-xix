@@ -1,0 +1,12 @@
+services:
+  lapor-mas-keii:
+    build:
+      context: .
+      args:
+        - PASSWORD=ctfuser
+    platform: linux/amd64
+    ports:
+      - "127.0.0.1:24000:9000"
+      - "127.0.0.1:24022:22"
+    volumes:
+      - ./flag.txt:/flag.txt:ro
